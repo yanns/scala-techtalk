@@ -6,13 +6,13 @@ class InvoiceCreator {
 
 
   def createInvoiceName(
-       invoiceDate: Date,
-       invoiceId: String,
-       userId: String,
-       firmId: String,
-       directInvoice: Boolean,
-       firmInvoice: Boolean,
-       electronic: Boolean): String = {
+    invoiceDate: Date,
+    invoiceId: String,
+    userId: String,
+    firmId: String,
+    directInvoice: Boolean,
+    firmInvoice: Boolean,
+    electronic: Boolean): String = {
 
     // ...
 

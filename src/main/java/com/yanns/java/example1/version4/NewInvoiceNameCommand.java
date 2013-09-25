@@ -4,40 +4,25 @@ import java.util.Date;
 
 public class NewInvoiceNameCommand {
 
-    private final Date invoiceDate;
-
-    private final String invoiceId;
-
-    private final String userId;
-
-    private final String firmId;
-
-    private final boolean directInvoice;
-
-    private final boolean firmInvoice;
-
-    private final boolean electronic;
-
     public static class NewInvoiceNameCommandBuilder {
+
         private Date invoiceDate;
-
         private String invoiceId;
-
         private String userId;
-
         private String firmId;
-
         private boolean directInvoice;
-
         private boolean firmInvoice;
-
         private boolean electronic;
 
-        public NewInvoiceNameCommandBuilder() {
-        }
-
         public NewInvoiceNameCommand build() {
-            return new NewInvoiceNameCommand(invoiceDate, invoiceId, userId, firmId, directInvoice, firmInvoice, electronic);
+            return new NewInvoiceNameCommand(
+                    invoiceDate,
+                    invoiceId,
+                    userId,
+                    firmId,
+                    directInvoice,
+                    firmInvoice,
+                    electronic);
         }
 
         public NewInvoiceNameCommandBuilder withInvoiceDate(Date invoiceDate) {
@@ -77,6 +62,13 @@ public class NewInvoiceNameCommand {
 
     }
 
+    private final Date invoiceDate;
+    private final String invoiceId;
+    private final String userId;
+    private final String firmId;
+    private final boolean directInvoice;
+    private final boolean firmInvoice;
+    private final boolean electronic;
 
     private NewInvoiceNameCommand(
             Date invoiceDate,

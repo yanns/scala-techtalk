@@ -14,6 +14,13 @@ public class InvoiceCreator {
             boolean electronic) {
 
         // ...
+        assert invoiceDate != null;
+        assert invoiceId != null;
+        assert userId != null;
+        assert firmId != null;
+        if (directInvoice || firmInvoice || electronic) {
+        }
+        // ...
 
         return "id";
     }

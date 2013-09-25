@@ -4,19 +4,20 @@ import java.util.Date
 
 class InvoiceController {
 
-   val invoiceCreator = new InvoiceCreator()
+  val invoiceCreator = new InvoiceCreator()
 
-   def payInvoice {
+  def payInvoice {
 
-     val newInvoiceId = invoiceCreator.createInvoiceName(
-       invoiceDate = new Date,
-       invoiceId = "45AE-45F",
-       userId = "872346",
-       firmId = "abc-234",
-       electronic = false
-     )
+    val newInvoiceId = invoiceCreator.createInvoiceName(
+      invoiceDate = new Date,
+      invoiceId   = "45AE-45F",
+      userId      = "872346",
+      firmId      = "abc-234",
+      electronic  = false
+    )
 
-     // ...
-   }
+    assert(newInvoiceId != null)
+    // ...
+  }
 
- }
+}

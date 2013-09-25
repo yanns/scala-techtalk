@@ -17,6 +17,8 @@ public class InvoiceController {
 
         String newInvoiceId = invoiceCreator.createInvoiceName(newInvoiceNameCommand);
 
+        assert newInvoiceId != null;
+
         // ...
     }
 }

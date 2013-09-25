@@ -9,15 +9,18 @@ public class InvoiceController {
     InvoiceCreator invoiceCreator = new InvoiceCreator();
 
     public void payInvoice() {
-        String newInvoiceId = invoiceCreator.createInvoiceName(
+        String newInvoiceId =
+            invoiceCreator.createInvoiceName(
                 new Date(), // invoiceDate
                 "45AE-45F", // invoiceId
-                "872346", // userId
-                "abc-234", // firmId
-                true, // directInvoice
-                false, // firmInvoice
-                false //electronic
+                "872346",   // userId
+                "abc-234",  // firmId
+                true,       // directInvoice
+                false,      // firmInvoice
+                false       //electronic
             );
+
+        assert newInvoiceId != null;
 
         // ...
     }
