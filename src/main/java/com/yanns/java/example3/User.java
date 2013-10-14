@@ -1,6 +1,8 @@
 package com.yanns.java.example3;
 
-import java.util.Calendar;
+import org.joda.time.DateTime;
+import org.joda.time.Years;
+
 import java.util.Date;
 
 public class User {
@@ -31,10 +33,8 @@ public class User {
         if (dateOfBirth == null) {
             return null;
         }
-        Date now = new Date();
-        long difference = now.getTime() - dateOfBirth.getTime();
-        Calendar yearCalculator = Calendar.getInstance();
-        yearCalculator.setTimeInMillis(difference);
-        return yearCalculator.get(Calendar.YEAR);
+        DateTime dob = new DateTime(dateOfBirth);
+        DateTime now = new DateTime();
+        return Years.yearsBetween(dob, now).getYears();
     }
 }

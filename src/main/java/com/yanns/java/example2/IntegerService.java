@@ -9,4 +9,8 @@ public class IntegerService {
         Integer userInput = null;
         multiplyBy2(userInput);
     }
+
+    public void controller() {
+        multiplyUserInputBy2();
+    }
 }

@@ -1,6 +1,7 @@
 package com.yanns.scala.example3
 
-import java.util.{Calendar, Date}
+import java.util.Date
+import org.joda.time.{DateTime, Years}
 
 case class User (
   name: String,
@@ -8,13 +9,12 @@ case class User (
   dateOfBirth: Option[Date] = None
 ) {
 
-  def age: Option[Int] = {
-    dateOfBirth.map { dob =>
-      val now = new Date()
-      val difference = now.getTime - dob.getTime
-      val yearCalculator = Calendar.getInstance()
-      yearCalculator.setTimeInMillis(difference)
-      yearCalculator.get(Calendar.YEAR)
-    }
+  def age: Option[Int] =
+    dateOfBirth.map { dob => calculateAge(dob) }
+
+  private def calculateAge(dateOfBirth: Date): Int = {
+    val dob = new DateTime(dateOfBirth)
+    val now = new DateTime()
+    Years.yearsBetween(dob, now).getYears
   }
 }

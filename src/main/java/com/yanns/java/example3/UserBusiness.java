@@ -15,4 +15,8 @@ public class UserBusiness {
         }
         return false;
     }
+
+    public void controller() {
+        isUserAllowed("bob");
+    }
 }
